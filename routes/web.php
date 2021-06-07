@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+Route::get('/home', function () {
+    return view('home');
+});*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+
+Route::get('/create-category', [\App\Http\Controllers\MainController::class, 'createCategory']);
+Route::get('/edit-category/{id}', [\App\Http\Controllers\MainController::class, 'editCategory']);
+Route::delete('/delete-category/{id}', [\App\Http\Controllers\MainController::class, 'delCategory']);
+Route::post('/create/check', [\App\Http\Controllers\MainController::class, 'createCategory_check']);
