@@ -17,9 +17,17 @@ Route::get('/home', function () {
     return view('home');
 });*/
 
-Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\CategoryController::class, 'index']);
 
-Route::get('/create-category', [\App\Http\Controllers\MainController::class, 'createCategory']);
-Route::get('/edit-category/{id}', [\App\Http\Controllers\MainController::class, 'editCategory']);
-Route::delete('/delete-category/{id}', [\App\Http\Controllers\MainController::class, 'delCategory']);
-Route::post('/create/check', [\App\Http\Controllers\MainController::class, 'createCategory_check']);
+Route::get('/create-category', [\App\Http\Controllers\CategoryController::class, 'createCategory']);
+Route::get('/edit-category/{id}', [\App\Http\Controllers\CategoryController::class, 'editCategory']);
+Route::delete('/delete-category/{id}', [\App\Http\Controllers\CategoryController::class, 'delCategory']);
+Route::post('/create/check', [\App\Http\Controllers\CategoryController::class, 'createCategory_check']);
+Route::post('/edit', [\App\Http\Controllers\CategoryController::class, 'edit']);
+
+Route::get('/product', [\App\Http\Controllers\ProductController::class, 'product']);
+Route::get('/create-product', [\App\Http\Controllers\ProductController::class, 'createProduct']);
+Route::get('/edit-product/{id}',[\App\Http\Controllers\ProductController::class, 'editProduct']);
+Route::delete('delete-product/{id}', [\App\Http\Controllers\ProductController::class, 'delProduct']);
+Route::post('/create/check_product', [\App\Http\Controllers\ProductController::class, 'createProduct_check']);
+Route::post('/edit-product/{id}', [\App\Http\Controllers\ProductController::class, 'editProduct']);

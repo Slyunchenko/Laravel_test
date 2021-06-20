@@ -2,11 +2,28 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Products extends Model
 {
     use HasFactory;
-    protected $table='products';
+
+    protected $table = 'products';
+    protected $primaryKey = 'product_id';
+
+    public static function search($params): Builder
+    {
+        $query = static::query();
+        return $query;
+    }
+
+    public function category()
+    {
+        return
+            $this->hasOne(ProductCategory::class, 'category_id', 'category_id');
+    }
+
+
 }

@@ -53,6 +53,7 @@
     </div>
     <div class="row">
         <div class="col-12">
+
             @grid(
             [
                 'dataProvider' => $provider,
@@ -71,6 +72,11 @@
                     [
                         'title' => 'Описание',
                         'value' => 'category_description',
+                        'formatters' => ['text'],
+                    ],
+                    [
+                        'title' => 'Дата',
+                        'value' => 'created_at',
                         'formatters' => ['text'],
                     ],
                     [
