@@ -20,6 +20,7 @@ class Product extends Migration
             $table->double('product_price');
             $table->integer('category_id')->unsigned();
             $table->date('created_at');
+            $table->date('updated_at');
             $table->foreign('category_id')->references('category_id')->on('product_category');
         });
     }

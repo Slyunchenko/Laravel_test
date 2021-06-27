@@ -13,7 +13,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
+@include('layouts.navigation')
 @yield('main_content')
 
 </body>

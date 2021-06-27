@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        $provider = new EloquentDataProvider(ProductCategory::search($request->query()));
+        $provider = new EloquentDataProvider(ProductCategory::search($request));
 
         return view('home', compact('provider'));
     }
@@ -36,7 +36,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return redirect('/');
+        return redirect('/category');
 
     }
 
@@ -62,14 +62,14 @@ class CategoryController extends Controller
             $model->save();
         }
 
-        return redirect('/');
+        return redirect('/category');
     }
 
     public function delCategory($id)
     {
         ProductCategory::query()->where('category_id', '=', $id)->delete();
 
-        return redirect('/');
+        return redirect('/category');
     }
 
 }

@@ -33,6 +33,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <select id="category" name="category" class="form-control">
+                            <option value="">Выбор категории</option>
                             @foreach($categories as $item)
                                 <option
                                     value="{{$item->getAttribute('category_id')}}">{{$item->getAttribute('category_name')}}</option>
@@ -75,7 +76,7 @@
                     ],
                     [
                         'title' => 'Категория',
-                        'value' => 'category.category_name',
+                        'value' => 'category_name',
                         'formatters' => ['text'],
                     ],
                     [
@@ -84,6 +85,7 @@
                         'formatters' => ['text'],
                     ],
                     [
+                        'title' => 'Операции',
                         'class' => 'actions',
                         'formatters' => ['raw'],
                         'value' => [

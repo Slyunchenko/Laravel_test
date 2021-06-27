@@ -1,0 +1,1 @@
+<?php /**PATH E:\OpenServer\domains\test\Laravel_test\resources\views/welcome.blade.php ENDPATH**/ ?>

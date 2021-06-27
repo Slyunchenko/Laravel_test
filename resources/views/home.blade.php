@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('title')Главная страница@endsection
 
 @section('main_content')
@@ -57,7 +56,7 @@
             @grid(
             [
                 'dataProvider' => $provider,
-                'showFilters' => false,
+                'showFilters' => true,
                 'rowsPerPage' => 10,
                 'columnOptions' => [
                     'class' => 'attribute',
@@ -75,11 +74,22 @@
                         'formatters' => ['text'],
                     ],
                     [
+                        'title' => 'Сумма',
+                        'value' => 'summa',
+                        'formatters' => ['text'],
+                    ],
+                    [
+                        'title' => 'Кол-во',
+                        'value' => 'count',
+                        'formatters' => ['text'],
+                    ],
+                    [
                         'title' => 'Дата',
                         'value' => 'created_at',
                         'formatters' => ['text'],
                     ],
                     [
+                        'title' => 'Операции',
                         'class' => 'actions',
                         'formatters' => ['raw'],
                         'value' => [

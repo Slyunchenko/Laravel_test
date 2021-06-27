@@ -18,6 +18,7 @@ class ProductCategory extends Migration
             $table->string('category_name');
             $table->string('category_description');
             $table->date('created_at');
+            $table->date('updated_at');
         });
     }
 

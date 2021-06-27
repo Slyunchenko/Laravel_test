@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function product(Request $request)
     {
-        $product = new EloquentDataProvider(Products::search($request->query()));
+        $product = new EloquentDataProvider(Products::search($request));
         $categories = ProductCategory::all();
 
         return view('product', compact('product', 'categories'));

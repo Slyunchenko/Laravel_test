@@ -1,5 +1,6 @@
 @extends('layout')
 
+
 @section('title')Создание категории@endsection
 
 @section('main_content')
